@@ -1,0 +1,41 @@
+%%%%%%====>>>-- Commandes définies --<<<====%%%%%
+
+%%%==> Pour l'ajustement des tableaux
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+%%%==> Permet l'ajout d'une ligne vide
+\def\wl{\par \vspace{\baselineskip}}
+
+%%%==> Utilisation du symbole degré
+\def\degC{$^{\circ}$C}
+\def\degF{$^{\circ}$F}
+
+%%%==> Sneaky phantom
+\newcommand{\ph}[1]{\phantom{#1}}
+
+
+%%%==> Seppage
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 
+
+\newcommand{\seppage}[2]{
+\begin{center}
+\vspace*{2.5cm}
+\includegraphics[width=5.5cm]{image/logo_heco.jpg}\\
+\wl
+\vspace*{2.5cm}
+\HRule{1.5pt}
+\wl{}
+\Huge \textbf{Annexe #1} \\
+\huge  #2 \\
+\vspace*{1cm}
+\vspace*{1cm}
+\huge Équipe HeCo \\ 
+\huge Analyse économique, étude de risques et d'impacts environnementaux \\
+\HRule{1.5pt}
+\end{center}
+\vspace*{1cm}
+\vfill
+\null
+\vfill
+}
+

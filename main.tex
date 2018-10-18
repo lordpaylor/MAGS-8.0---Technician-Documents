@@ -1,0 +1,126 @@
+ %%%%%%====>>>-- Définition du projet --<<<====%%%%%
+\documentclass[12pt]{article}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage[english]{babel}
+\setlength\textwidth{1mm}
+\renewcommand{\baselinestretch}{1.15} 
+
+%%%%%%====>>>-- Options et paquets --<<<====%%%%%
+\usepackage{amsmath}
+
+%%%==> Options de formatage
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pslatex}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{comment}
+\usepackage{wasysym}
+\usepackage{xcolor}
+
+
+%%%==> Graphiques
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{array}
+\usepackage{multirow}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usetikzlibrary{pgfplots.groupplots}
+\pgfplotsset{compat=1.14}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+
+
+%%%==> Ajouts de pdf
+\usepackage{pdfpages}
+
+%%%==> Bibliographie
+\usepackage{csquotes}
+\usepackage{xpatch}
+\usepackage[style=numeric, subentry, sorting=none, backend=biber, firstinits=true, terseinits=true, url=false, doi=false, isbn=false, maxbibnames=999]{biblatex}
+\addbibresource{biblio.bib}
+
+%%%==> Tableaux
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{pgfplotstable}
+\usepackage{longtable}
+
+%%%==> Hyperliens
+\usepackage[linktoc=all]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+
+\usepackage{hyperref}
+
+\definecolor{terragon}{HTML}{760001}
+%Olympiacos - 760001
+
+\definecolor{email}{HTML}{0000FF}
+
+%MAGS Serial No.
+\newcommand{\nserial}{30}
+
+%Type of Report
+\newcommand{\reporttype}{Duplex Filter Assembly Quick Start Guide } %Name of Document
+\newcommand{\rev}{Rev 03 } %Revision No. of Document
+\newcommand{\release}{18/06/2018 } %Release date of document DD-MM-YYYY
+
+%%%==> Commandes définies
+\input{commands.tex}
+
+%%%%%%====>>>-- Début du document --<<<====%%%%%
+\begin{document}
+\setlength\parindent{0pt}
+
+%%%==> Page titre
+%\input{title_page.tex}
+
+
+%%%==> Page blanche
+\cleardoublepage % semble ne pas fonctionner
+
+
+%%%==> Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[height=1.4cm]{pictures/terragon.png}}
+\rhead{\reporttype - \rev} %right header
+\renewcommand{\headrulewidth}{1.5pt} %width of header line
+\renewcommand{\footrulewidth}{1.5pt}
+\setlength{\headsep}{1.5cm} %margin between header and text
+\rfoot{Page \thepage}
+\lfoot{Released \release}
+
+%%%==> Table des matières et numérotation
+\setcounter{page}{1}
+\pagenumbering{roman}
+\setcounter{tocdepth}{2}
+%\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+
+
+%%%==> Choisir le fichier
+\input{report.tex}
+\end{document}
+%%%%%%====>>>-- Fin du document --<<<====%%%%%
+

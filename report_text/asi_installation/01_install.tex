@@ -1,0 +1,35 @@
+\section{AS-i Nodes Installation}
+To install AS-i nodes on a MAGS system, simply follow these steps.
+
+\paragraph{Verify that there are no errors on the AS-i Master}.\\
+On the AS-i master, make sure that the "conf/pf" for both AS-i 1 and AS-i 2 are off. If any of the two leds are on, please contact Terragon support for further debugging.
+
+\paragraph{Install the new nodes}.\\
+Start by turning off the main power from the MAGS. The new nodes have to be installed on the separator, on the left side of CAB1. Refer to the AC5211 installation guide, page 4-8. Once the node in installed, turn the power back on.
+
+\paragraph{Update the AS-i master configuration}.\\
+On the AS-i master, do the following to add the new slaves to the config: \textsc{menu} $\rightarrow$ \textsc{quick setup} $\rightarrow$ \textsc{config all}. Once completed, verify on the new slaves that the PWR and AUX leds are solid green and that all the FAULT led is off.
+
+\paragraph{UPdate the software package and configuration file}.\\
+A new software and configuration file will have to be uploaded to the HMI. Contact Terragon support for assistance.
+
+\paragraph{Program alarm output as required}.\\
+The new alarm outputs have to be configured for the desired behaviour. The settings are:
+\begin{itemize}
+    \item SET\_Comm\_AL002Config
+    \item SET\_Comm\_AL003Config
+    \item SET\_Comm\_AL004Config
+    \item SET\_Comm\_AL005Config
+    \item SET\_Comm\_AL006Config
+    \item SET\_Comm\_AL007Config
+\end{itemize}
+
+The value for each setting is as follows:
+\begin{itemize}
+    \item[0:]  MAGS running Status
+    \item[1:] "Cold shutdown", "Hot shutdown" or "Estop" level alarm is triggered
+    \item[2:] Ready to load
+    \item[3:] "Warning", "System Off", "Cold Shutdown", "Hot Shutdown" or "Estop" level alarm is triggered
+    \item[4:] "System Off", "Cold Shutdown", "Hot shutdown" or "Estop" level alarm is triggered
+\end{itemize}
+
